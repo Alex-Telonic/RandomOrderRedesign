@@ -76,4 +76,4 @@ console.log(url);
    $("#output").html();
  }
 
-
+redirect();
