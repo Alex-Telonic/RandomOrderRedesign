@@ -27,7 +27,7 @@ function geo_success(position) {
 }
 
 function getZipCode(position) {
-    var geonames_api = "http://api.geonames.org/findNearbyPostalCodesJSON?";
+    var geonames_api = "https://secure.geonames.org/findNearbyPostalCodesJSON?";
 
 
     geonames_api = geonames_api + "lat=" + position.coords.latitude + "&" + "lng=" + position.coords.longitude + "&username=alex1895"
