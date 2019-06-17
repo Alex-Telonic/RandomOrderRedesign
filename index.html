@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="script.js"></script>
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -58,7 +59,7 @@
           <div class="ml-auto w-25">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                <li class="cta"><a href="#contact-section" class="nav-link"><span>Contact Us</span></a></li>
+                <li class="cta"><a href="#contact-section" class="nav-link"><span>Contact Me</span></a></li>
               </ul>
             </nav>
             <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
@@ -76,10 +77,10 @@
             <div class="col-12">
               <div class="row align-items-center">
                 <div class="col-lg-6 mb-4">
-                  <h1  data-aos="fade-up" data-aos-delay="100">Get random products</h1>
-                  <p class="mb-4"  data-aos="fade-up" data-aos-delay="200">Click the button below to generate a random product from ebay.</p>
+                  <h1  data-aos="fade-up" data-aos-delay="100">Get closest bike products</h1>
+                  <p class="mb-4"  data-aos="fade-up" data-aos-delay="200">Click the button below to get the closest bike product from ebay.</p>
                   <p data-aos="fade-up" data-aos-delay="300">
-                    <button  class="btn btn-primary py-3 px-5 btn-pill" onclick="redirect()">Get your Product</button>
+                    <button  class="btn btn-primary py-3 px-5 btn-pill" onclick="redirect()">Get your Bike</button>
                     </p>
 
                 </div>
@@ -94,6 +95,14 @@ C/O https://placeholder.com/">  </a>
                         </div>
                         <div class="" id="title">
                             <a class="product_link" href="" > <p id="product_title"></p></a>
+                        </div>
+
+                        <div>
+                        	<input id="plz" type="text" name="plzcode" />
+                        	 <button type="button" onclick="update_plz()">Search</button> 
+                        </div>
+                        <div id="current_plz">
+                        	
                         </div>
                   </form>
 
