@@ -55,6 +55,10 @@ function update_plz() {
   redirect();
 }
 
+function getLocation() {
+  var wpid = navigator.geolocation.getCurrentPosition(geo_success, geo_error, geo_options);
+}
+
 
 
 function redirect() {
