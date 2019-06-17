@@ -22,6 +22,7 @@ function geo_error() {
 
 function geo_success(position) {
   console.log(position.coords.latitude, position.coords.longitude);
+  $("#cord").text("Lat: " + position.coords.latitude + " Long: " + position.coords.longitude)
   getZipCode(position);
 }
 
@@ -43,7 +44,9 @@ function getZipCode(position) {
       currentPostalCode = data.postalCodes[0].postalCode;
 
       $("#current_plz").text("Current Position is: " + currentPostalCode);
+
       $("#plz").val(currentPostalCode);
+
       redirect();
     },
   });
