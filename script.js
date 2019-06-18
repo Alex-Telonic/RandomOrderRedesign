@@ -5,6 +5,7 @@ var geo_options = {
 };
 
 var currentPostalCode;
+var itemcount = 1;
 
 var wpid = navigator.geolocation.getCurrentPosition(geo_success, geo_error, geo_options);
 
@@ -66,6 +67,7 @@ function getLocation() {
 
 function redirect() {
 
+
   var appid = "Alexande-RandomOr-PRD-8ea94fa4c-cec0f5ed";
 
   var keywords = ["fun", "useless", "joke", "prank", "crazy", "great"];
@@ -87,7 +89,9 @@ function redirect() {
   url += "&sortOrder=WatchCountDecreaseSort"
 
 
-  var geo_url = "https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=Alexande-RandomOr-PRD-8ea94fa4c-cec0f5ed&GLOBAL-ID=EBAY-DE&RESPONSE-DATA-FORMAT=JSON&callback=jsonpcallback&REST-PAYLOAD&keywords=bike&paginationInput.pageNumber=13&paginationInput.entriesPerPage=1&sortOrder=Distance&";
+  var geo_url = "https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=Alexande-RandomOr-PRD-8ea94fa4c-cec0f5ed&GLOBAL-ID=EBAY-DE&RESPONSE-DATA-FORMAT=JSON&callback=jsonpcallback&REST-PAYLOAD&keywords=bike&paginationInput.pageNumber=";
+  geo_url = geo_url + itemcount;
+  geo_url = geo_url + "&paginationInput.entriesPerPage=12&sortOrder=Distance&";
 
 
   geo_url = geo_url + "buyerPostalCode=";
@@ -124,6 +128,7 @@ function jsonpcallback(jsdata) {
   console.log(itemURL);
   console.log(picURL);
   if (picURL.includes("http://thumbs1.ebaystatic.com/pict/04040_0.jpg")) {
+    itemcount = itemcount + 1;
     redirect();
     console.log("No picture")
   } else {
